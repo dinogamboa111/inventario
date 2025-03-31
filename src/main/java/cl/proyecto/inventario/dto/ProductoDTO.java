@@ -1,5 +1,9 @@
 package cl.proyecto.inventario.dto;
 
+
+
+// esta clase funciona como objeto de transferencia de datos.
+
 public class ProductoDTO {
 
     private Long id;
