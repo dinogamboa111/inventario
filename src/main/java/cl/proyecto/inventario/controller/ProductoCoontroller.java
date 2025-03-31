@@ -38,7 +38,7 @@ public class ProductoCoontroller {
      @GetMapping("/{id}")
     public ResponseEntity<ProductoDTO> obtenerPorId(@PathVariable Long id) {
         ProductoDTO producto = productoService.obtenerPorId(id);
-        return producto != null ? ResponseEntity.ok(producto) : ResponseEntity.notFound().build();
+        return producto != null ? ResponseEntity.ok(producto) : ResponseEntity.notFound().build(); // el rsponse entity me da un codigo 200 ok http y el objeto producto como cuerp, en cambio si no lo encuentra devuelve un 404 not found.
     }
 
     @PostMapping
