@@ -1,7 +1,8 @@
-package cl.proyecto.inventario.controller;
+package cl.proyecto.inventario.crud.producto.controller;
 
-import cl.proyecto.inventario.dto.ProductoDTO;
-import cl.proyecto.inventario.service.impl.ProductoServiceImpl;
+import cl.proyecto.inventario.crud.producto.dto.ProductoDTO;
+import cl.proyecto.inventario.crud.producto.service.impl.ProductoServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

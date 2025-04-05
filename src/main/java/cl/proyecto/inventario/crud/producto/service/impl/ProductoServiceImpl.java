@@ -1,13 +1,13 @@
-package cl.proyecto.inventario.service.impl;
+package cl.proyecto.inventario.crud.producto.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.proyecto.inventario.dto.ProductoDTO;
-import cl.proyecto.inventario.repository.ProductoRepository;
-import cl.proyecto.inventario.service.IProductoService;
+import cl.proyecto.inventario.crud.producto.dto.ProductoDTO;
+import cl.proyecto.inventario.crud.producto.repository.ProductoRepository;
+import cl.proyecto.inventario.crud.producto.service.IProductoService;
 
 @Service
 public class ProductoServiceImpl implements IProductoService {
