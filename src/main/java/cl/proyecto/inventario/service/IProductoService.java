@@ -1,24 +1,13 @@
 package cl.proyecto.inventario.service;
 
 import java.util.List;
-
 import cl.proyecto.inventario.dto.ProductoDTO;
 
 public interface IProductoService {
-
-    //obtiene todos los productos/lista
-    List<ProductoDTO> obtenerTodos();
     
-    // oobtiene un producto llamandolo por la id
-    ProductoDTO obtenerPorId(Long id);
-
-    //guarda la creacion de un nuevo producto(create)
-    ProductoDTO guardar(ProductoDTO productoDTO);
-
-    //actualiza un producto
-    ProductoDTO actualizar(Long id, ProductoDTO productoDTO);
-
-    //elimina
-    boolean eliminar(Long id);
-
+    ProductoDTO insert(ProductoDTO producto); // Inserta un nuevo producto
+    ProductoDTO update(int id, ProductoDTO producto); // Actualiza un producto por su ID
+    ProductoDTO delete(int id); // Elimina un producto por su ID
+    ProductoDTO getById(int id); // Obtiene un producto por su ID
+    List<ProductoDTO> getAll(); // Obtiene todos los productos
 }

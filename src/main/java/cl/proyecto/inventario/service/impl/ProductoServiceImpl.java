@@ -1,66 +1,53 @@
 package cl.proyecto.inventario.service.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.proyecto.inventario.dto.ProductoDTO;
-
+import cl.proyecto.inventario.repository.ProductoRepository;
 import cl.proyecto.inventario.service.IProductoService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+@Service
+public class ProductoServiceImpl implements IProductoService {
 
+    @Autowired
+    ProductoRepository repo;
 
-// aqui esta la implementacion real que mostramos en la interface, estaria la logica real
-//para manejar productos, usaremo de momento una lista en memoria para simular la bbdd
-    
-    
-    @Service  //esta clase es un servicio , aqui estaria declarandoce ese hecho
-public class ProductoServiceImpl implements IProductoService{
-
-    private List<ProductoDTO> lProductos = new ArrayList<>(); 
-    private Long idAutProducto = 1L; //contador para ids automaticas el L despues del 1
-                                    // nos dice que es un dato de tipo Long no int
     @Override
-    public List<ProductoDTO> obtenerTodos() {
-        return lProductos; // retorna todos los productos de una lista
+    public ProductoDTO insert(ProductoDTO producto) {
+        // Inserta o actualiza el producto
+        return repo.save(producto); // Guarda el producto (si tiene ID, lo actualiza; si no, lo inserta)
     }
 
     @Override
-    public ProductoDTO obtenerPorId(Long id) {
-        return lProductos.stream() // recorre la lista
-                .filter(p -> p.getId().equals(id)) // filtra por id
-                .findFirst() // bbtiene el primer resultado 
-                .orElse(null); // si no hay retorna null
+    public ProductoDTO update(int id, ProductoDTO producto) {
+        // Asigna el ID del producto para actualizar
+        producto.setIdProducto(id); // Actualiza el ID del producto
+        return repo.save(producto); // Guarda el producto actualizado
     }
-    @Override
-    public ProductoDTO guardar(ProductoDTO productoDTO) {
-        productoDTO.setId(idAutProducto++); // asigna un id unico al producto
-        lProductos.add(productoDTO); // agrega el producto a la lista
-        return productoDTO; // retorna el producto q se guardo, apunta al q mencionamos en el metodo
-    }
-    @Override
-    public ProductoDTO actualizar(Long id, ProductoDTO productoDTO) {
-        Optional<ProductoDTO> productoExistente = lProductos.stream()
-                .filter(p -> p.getId().equals(id))
-                .findFirst(); // busca producto por id, da el primer resultado q encuentra
 
-        if (productoExistente.isPresent()) {
-            ProductoDTO producto = productoExistente.get();
-            producto.setNombre(productoDTO.getNombre());
-            producto.setDescripcion(productoDTO.getDescripcion());
-            producto.setStock(productoDTO.getStock());
-            producto.setPrecioCompra(productoDTO.getPrecioCompra());
-            producto.setPrecioVenta(productoDTO.getPrecioVenta());
-            producto.setEstado(productoDTO.isEstado());
-            return producto; // rtorna el producto actualizado
+    @Override
+    public ProductoDTO delete(int id) {
+        // Obtiene el producto antes de eliminarlo
+        ProductoDTO producto = repo.findById(id).orElse(null);
+        if (producto != null) {
+            // Elimina el producto
+            repo.deleteById(id);
         }
-        return null; // retorna null si  no existe
+        return producto; // Devuelve el producto eliminado o null si no existía
     }
+
     @Override
-    public boolean eliminar(Long id) {
-        return lProductos.removeIf(p -> p.getId().equals(id)); // elimina si encuentra el id
+    public ProductoDTO getById(int id) {
+        // Obtiene un producto por su ID
+        return repo.findById(id).orElse(null); // Retorna null si no se encuentra el producto
+    }
 
+    @Override
+    public List<ProductoDTO> getAll() {
+        // Obtiene todos los productos
+        return (List<ProductoDTO>) repo.findAll(); 
+    }
 }
-
-}//comentario pa q no se me pierda la ultima llave XD
