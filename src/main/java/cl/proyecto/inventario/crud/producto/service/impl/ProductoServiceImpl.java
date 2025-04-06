@@ -17,37 +17,37 @@ public class ProductoServiceImpl implements IProductoService {
 
     @Override
     public ProductoDTO insert(ProductoDTO producto) {
-        // Inserta o actualiza el producto
-        return repo.save(producto); // Guarda el producto (si tiene ID, lo actualiza; si no, lo inserta)
+        
+        return repo.save(producto); 
     }
 
     @Override
     public ProductoDTO update(int id, ProductoDTO producto) {
-        // Asigna el ID del producto para actualizar
-        producto.setIdProducto(id); // Actualiza el ID del producto
-        return repo.save(producto); // Guarda el producto actualizado
+        
+        producto.setIdProducto(id); 
+        return repo.save(producto); 
     }
 
     @Override
     public ProductoDTO delete(int id) {
-        // Obtiene el producto antes de eliminarlo
+        
         ProductoDTO producto = repo.findById(id).orElse(null);
         if (producto != null) {
-            // Elimina el producto
+           
             repo.deleteById(id);
         }
-        return producto; // Devuelve el producto eliminado o null si no existía
+        return producto; 
     }
 
     @Override
     public ProductoDTO getById(int id) {
-        // Obtiene un producto por su ID
-        return repo.findById(id).orElse(null); // Retorna null si no se encuentra el producto
+        
+        return repo.findById(id).orElse(null); 
     }
 
     @Override
     public List<ProductoDTO> getAll() {
-        // Obtiene todos los productos
+        
         return (List<ProductoDTO>) repo.findAll(); 
     }
 }
