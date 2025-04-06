@@ -3,11 +3,13 @@ package cl.proyecto.inventario.crud.comuna.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cl.proyecto.inventario.crud.comuna.dto.ComunaDTO;
 import cl.proyecto.inventario.crud.comuna.repository.ComunaRepository;
 import cl.proyecto.inventario.crud.comuna.service.IComunaService;
 
+@Service
 public class ComunaServiceImpl implements IComunaService{
 
     @Autowired
