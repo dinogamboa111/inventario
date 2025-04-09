@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-package cl.proyecto.inventario.crud.detallePedido.controller;
+package cl.proyecto.inventario.crud.detallepedido.controller;
 
 import java.util.List;
 
@@ -18,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.proyecto.inventario.crud.detallePedido.dto.DetallePedidoDTO;
-import cl.proyecto.inventario.crud.detallePedido.service.impl.DetallePedidoServiceImpl;
+import cl.proyecto.inventario.crud.detallepedido.dto.DetallePedidoDTO;
+import cl.proyecto.inventario.crud.detallepedido.service.impl.DetallePedidoServiceImpl;
 
 @RestController
 @RequestMapping("api/detallepedido")

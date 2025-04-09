@@ -1,5 +1,5 @@
 
-package cl.proyecto.inventario.crud.detallePedido.dto;
+package cl.proyecto.inventario.crud.detallepedido.dto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,13 +1,13 @@
-package cl.proyecto.inventario.crud.detallePedido.service.impl;
+package cl.proyecto.inventario.crud.detallepedido.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.proyecto.inventario.crud.detallePedido.dto.DetallePedidoDTO;
-import cl.proyecto.inventario.crud.detallePedido.repository.DetallePedidoRepository;
-import cl.proyecto.inventario.crud.detallePedido.service.IDetallePedidoService;
+import cl.proyecto.inventario.crud.detallepedido.dto.DetallePedidoDTO;
+import cl.proyecto.inventario.crud.detallepedido.repository.DetallePedidoRepository;
+import cl.proyecto.inventario.crud.detallepedido.service.IDetallePedidoService;
 
 
 @Service
