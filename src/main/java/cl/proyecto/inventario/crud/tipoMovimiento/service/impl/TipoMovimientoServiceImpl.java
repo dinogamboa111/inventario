@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.tipoMovimiento.service.impl;
+package cl.proyecto.inventario.crud.tipomovimiento.service.impl;
 
 public class TipoMovimientoServiceImpl {
 

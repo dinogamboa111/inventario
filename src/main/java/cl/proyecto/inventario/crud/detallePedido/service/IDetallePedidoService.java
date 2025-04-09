@@ -1,8 +1,8 @@
-package cl.proyecto.inventario.crud.detallePedido.service;
+package cl.proyecto.inventario.crud.detallepedido.service;
 
 import java.util.List;
 
-import cl.proyecto.inventario.crud.detallePedido.dto.DetallePedidoDTO;
+import cl.proyecto.inventario.crud.detallepedido.dto.DetallePedidoDTO;
 
 public interface IDetallePedidoService {
     DetallePedidoDTO insert(DetallePedidoDTO detallePedido); // Inserta un nuevo detallePedido
