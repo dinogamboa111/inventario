@@ -1,6 +1,6 @@
 package cl.proyecto.inventario.crud.pedido.dto;
 
-import java.sql.Date;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
