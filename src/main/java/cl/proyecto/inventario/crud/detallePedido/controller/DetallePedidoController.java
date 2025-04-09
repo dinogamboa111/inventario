@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.detallePedido.controller;
+package cl.proyecto.inventario.crud.detallepedido.controller;
 
 import java.util.List;
 

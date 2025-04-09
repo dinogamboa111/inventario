@@ -1,3 +1,4 @@
+
 package cl.proyecto.inventario.crud.detallePedido.repository;
 
 import org.springframework.data.repository.CrudRepository;
@@ -9,6 +10,7 @@ import cl.proyecto.inventario.crud.detallePedido.dto.DetallePedidoDTO;
 public interface DetallePedidoRepository extends CrudRepository<DetallePedidoDTO, Integer> {
 
 }
+
 
 
 
