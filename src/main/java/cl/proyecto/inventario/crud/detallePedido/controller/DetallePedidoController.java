@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 package cl.proyecto.inventario.crud.detallePedido.controller;
 
 import java.util.List;
