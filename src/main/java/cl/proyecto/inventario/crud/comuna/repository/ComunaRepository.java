@@ -1,5 +1,11 @@
 package cl.proyecto.inventario.crud.comuna.repository;
 
-public interface ComunaRepository {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import cl.proyecto.inventario.crud.comuna.dto.ComunaDTO;
+@Repository
+public interface ComunaRepository extends CrudRepository<ComunaDTO,Integer> {
 
 }
+
