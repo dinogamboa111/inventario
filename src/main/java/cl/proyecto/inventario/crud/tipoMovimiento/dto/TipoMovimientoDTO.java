@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.tipoMovimiento.dto;
+package cl.proyecto.inventario.crud.tipomovimiento.dto;
 
 public class TipoMovimientoDTO {
 

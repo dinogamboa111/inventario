@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.comuna.dto;
+package cl.proyecto.inventario.crud.detalleproducto.dto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,19 +10,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "comuna")
+@Table(name = "DetalleProducto")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class ComunaDTO {
+public class DetalleProductoDTO {
+
     @Id
-    @Column(name = "id_comuna")
+    @Column(name = "id_detalle")
+    private Long idDetalle;
 
-    private int idComuna;
+    
+    private Long idPedido;  
 
-    private String nombreComuna;
+   
+    private Long idProducto;
 
-    private int idProvincia;
+    private int cantidad;
 
+    private double precio;
 }

@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.tipoMovimiento.service;
+package cl.proyecto.inventario.crud.tipomovimiento.service;
 
 public interface ITipoMovimientoService {
 

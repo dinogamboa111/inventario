@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.tipoMovimiento.controller;
+package cl.proyecto.inventario.crud.tipomovimiento.controller;
 
 public class TipoMovimientoController {
 
