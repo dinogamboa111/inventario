@@ -1,13 +1,15 @@
 package cl.proyecto.inventario.crud.region.service;
 
-
-import cl.proyecto.inventario.crud.region.dto.RegionDTO;
 import java.util.List;
 
+import cl.proyecto.inventario.crud.region.dto.RegionDTO;
+
 public interface IRegionService {
-    List<RegionDTO> getAll();
-    RegionDTO save(RegionDTO regionDTO);
-    RegionDTO getById(int id);
-    void delete(int id);
-    RegionDTO update(int id, RegionDTO regionDTO);
+
+    RegionDTO insert( RegionDTO region); // Inserta un nuevo region
+    RegionDTO update(int id,  RegionDTO region); // Actualiza un region por su ID
+    RegionDTO delete(int id); // Elimina un region por su ID
+    RegionDTO getById(int id); // Obtiene un region por su ID
+    List< RegionDTO> getAll(); // Obtiene todos los regions
 }
+
