@@ -1,4 +1,4 @@
-package cl.proyecto.inventario.crud.provincia.controller;
+package cl.proyecto.inventario.crud.region.controller;
 
 import java.util.List;
 
@@ -14,47 +14,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.proyecto.inventario.crud.provincia.dto.ProvinciaDTO;
-import cl.proyecto.inventario.crud.provincia.service.impl.ProvinciaServiceImpl;
+import cl.proyecto.inventario.crud.region.dto.RegionDTO;
+import cl.proyecto.inventario.crud.region.service.impl.RegionServiceImpl;
 
 @RestController
-@RequestMapping("api/provincia")
-public class ProvinciaController {
+@RequestMapping("api/region")
+public class RegionController {
 
     @Autowired
-    private ProvinciaServiceImpl provinciaService;
+    private RegionServiceImpl regionService;
 
-    // Crear nuevo provincia
+    // Crear nuevo region
     @PostMapping
-    public ResponseEntity<ProvinciaDTO> create(@RequestBody ProvinciaDTO provincia) {
-        ProvinciaDTO provinciaCreado = provinciaService.insert(provincia);
-        return new ResponseEntity<>(provinciaCreado, HttpStatus.CREATED);
+    public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO region) {
+        RegionDTO regionCreado = regionService.insert(region);
+        return new ResponseEntity<>(regionCreado, HttpStatus.CREATED);
     }
 
-    // obtener  provincia por ID
+    // obtener  region por ID
     @GetMapping("/{id}")
-    public ResponseEntity<ProvinciaDTO> getById(@PathVariable int id) {
-        ProvinciaDTO provincia = provinciaService.getById(id);
-        if (provincia != null) {
-            return new ResponseEntity<>(provincia, HttpStatus.OK);
+    public ResponseEntity<RegionDTO> getById(@PathVariable int id) {
+        RegionDTO region = regionService.getById(id);
+        if (region != null) {
+            return new ResponseEntity<>(region, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    // bbtener todas las provincias (listar)
+    // bbtener todas las regions (listar)
     @GetMapping
-    public ResponseEntity<List<ProvinciaDTO>> getAll() {
-        List<ProvinciaDTO> provincias = provinciaService.getAll();
-        return new ResponseEntity<>(provincias, HttpStatus.OK);
+    public ResponseEntity<List<RegionDTO>> getAll() {
+        List<RegionDTO> regions = regionService.getAll();
+        return new ResponseEntity<>(regions, HttpStatus.OK);
     }
 
     //actualizar 
     @PutMapping("/{id}")
-    public ResponseEntity<ProvinciaDTO> update(@PathVariable int id, @RequestBody ProvinciaDTO provincia) {
-        ProvinciaDTO provinciaActualizado = provinciaService.update(id, provincia);
-        if (provinciaActualizado != null) {
-            return new ResponseEntity<>(provinciaActualizado, HttpStatus.OK);
+    public ResponseEntity<RegionDTO> update(@PathVariable int id, @RequestBody RegionDTO region) {
+        RegionDTO regionActualizado = regionService.update(id, region);
+        if (regionActualizado != null) {
+            return new ResponseEntity<>(regionActualizado, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -63,8 +63,8 @@ public class ProvinciaController {
     // eliminar 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {
-        ProvinciaDTO provincia = provinciaService.delete(id);
-        if (provincia != null) {
+        RegionDTO region = regionService.delete(id);
+        if (region != null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
